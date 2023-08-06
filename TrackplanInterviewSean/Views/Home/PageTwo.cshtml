@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Page Two";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PageTwo</title>
+</head>
+<body>
+    <table>
+        @{
+            var word = ViewBag.Word as string;
+            if (!string.IsNullOrEmpty(word))
+            {
+                for (int i = 0; i < word.Length; i++)
+                {
+                    <tr>
+                        @for (int j = 0; j < i; j++)
+                        {
+                            <td>&nbsp;</td>
+                        }
+                        <td>@word[i]</td>
+                    </tr>
+                }
+                for(int i = 0; i < word.Length; i++)
+                {
+                    <tr>
+                        @for(int j = word.Length - (i + 2); j >=0; j--)
+                        {
+                            <td>&nbsp;</td>
+                        }
+                        <td>@word[i]</td>
+                    </tr>
+                }
+            }
+         }
+    </table>
+</body>
+</html>

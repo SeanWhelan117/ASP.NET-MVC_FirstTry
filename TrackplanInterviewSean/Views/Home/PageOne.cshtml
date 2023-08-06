@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "Page One";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PageOne</title>
+</head>
+<body>
+    @using (Html.BeginForm("PageTwo", "Home", FormMethod.Post))
+    {
+        <div>
+            <label for="inputWord">Enter a word:</label>
+            <input type="text" id="inputWord" name="word"/>
+            <input type="submit" value="Go"/>
+        </div>
+    }
+</body>
+</html>
